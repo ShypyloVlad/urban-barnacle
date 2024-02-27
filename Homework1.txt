@@ -1,0 +1,66 @@
+№1
+<?php
+$remainder = 7 % 3;
+echo $remainder;
+?>
+№2
+<?php
+
+$square_root = sqrt(25);
+echo  $square_root;
+?>
+№3
+<?php
+// Отримання цілої частини ділення 7 на 7.15
+$integer_division = intval(7 / 7.15);
+echo  $integer_division;
+№4
+<?php
+$phrase = "Десять негритят пошли купаться в море";
+$words = explode(" ", $phrase);
+$word4 = $words[3]; // Індекс 3 в масиві $words відповідає четвертому слову (індексуючи з 0)
+echo $word4;
+?>
+№5
+<?php
+$phrase = "Десять негритят пошли купаться в море";
+$seventeenth_char = mb_substr($phrase, 16, 1, 'UTF-8');
+echo  $seventeenth_char;
+?>
+№6
+<?php
+$phrase = "Десять негритят пошли купаться в море";
+$capitalized_phrase = mb_convert_case($phrase, MB_CASE_TITLE, "UTF-8");
+echo  $capitalized_phrase;
+?>
+№7
+<?php
+$phrase = "Десять негритят пошли купаться в море";
+$length = mb_strlen($phrase, 'UTF-8');
+echo $length;
+?>
+№8
+<?php
+$true_comparison = true == 1;
+echo "Твердження true дорівнює 1: ";
+echo $true_comparison ? "Так" : "Ні";
+echo "<br>";
+№9
+<?php
+$false_comparison = false === 0;
+echo "Твердження false дорівнює 0: ";
+echo $false_comparison ? "Так" : "Ні";
+echo "<br>";
+№10
+<?php
+
+$string_comparison = strcmp("three", "три");
+echo $string_comparison > 0 ? "'three'" : "'три'";
+echo "<br>";
+№11
+<?php
+// Порівняння чисел 125 * 13 + 7 та 223 + 28 * 2
+$number1 = 125 * 13 + 7;
+$number2 = 223 + 28 * 2;
+echo $number1 > $number2 ? $number1 : $number2;
+?>
