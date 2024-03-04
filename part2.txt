@@ -1,0 +1,45 @@
+<?php
+
+$firstArr = [
+    'one' => 1,
+    'two' => 2,
+    'three' => 3,
+    'foure' => 5,
+    'five' => 12,
+];
+
+$secondArr = [
+    'one' => 1,
+    'seven' => 22,
+    'three' => 32,
+    'foure' => 5,
+    'five' => 13,
+    'six' => 37,
+];
+
+// 1) Найти все элементы которые отсутствуют в первом массиве и присутствуют во втором
+$missingInFirst = array_diff_key($secondArr, $firstArr);
+echo "Элементы отсутствующие в первом массиве и присутствующие во втором: \n";
+print_r($missingInFirst);
+
+// 2) Найти все элементы которые присутствуют в первом и отсутствуют во втором
+$missingInSecond = array_diff_key($firstArr, $secondArr);
+echo "Элементы присутствующие в первом массиве и отсутствующие во втором: \n";
+print_r($missingInSecond);
+
+// 3) Найти все элементы значения которых совпадают
+$intersectValues = array_intersect_assoc($firstArr, $secondArr);
+echo "Элементы со значениями, которые совпадают: \n";
+print_r($intersectValues);
+
+// 4) Найти все элементы значения которых отличается
+$differentValues = [];
+foreach ($firstArr as $key => $value) {
+    if (isset($secondArr[$key]) && $secondArr[$key] !== $value) {
+        $differentValues[$key] = $value;
+    }
+}
+echo "Элементы со значениями, которые отличаются: \n";
+print_r($differentValues);
+
+?>
